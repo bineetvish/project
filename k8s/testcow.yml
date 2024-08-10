@@ -3,19 +3,20 @@ kind: Deployment
 metadata:
   name: testcowproject
   labels:
-    app: nginx
+    app: nginx  # Updated to match the service selector
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: nginx  # Updated to match the service selector
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx  # Updated to match the service selector
     spec:
       containers:
       - name: testcowproject
         image: bineetvish/testproject:v1
         ports:
         - containerPort: 4499
+        
