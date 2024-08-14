@@ -42,5 +42,5 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-           kubectl -f apply testcow.yml
-           kubectl -f apply service.yml
+           kubectl apply -f testcow.yml
+           kubectl apply -f service.yml
