@@ -38,8 +38,8 @@ jobs:
         sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
         minikube start
 
-    - name: List contents of the working directory (before cd)
-      run: ls -R
+    - name: List contents of /project/k8s
+      run: ls -la /project/k8s
     - name: Deploy to Kubernetes
       run: | 
           
