@@ -41,6 +41,7 @@ jobs:
       run: ls -R
 
     - name: Deploy to Kubernetes
-      run: |
+      run: | 
+           cd project/k8s
            kubectl apply -f testcow.yml
            kubectl apply -f service.yml
