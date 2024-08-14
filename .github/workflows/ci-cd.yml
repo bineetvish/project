@@ -41,8 +41,13 @@ jobs:
       run: ls -R
 
     - name: Deploy to Kubernetes
-      run: |
       
-        ls -R  # List files in k8s directory to confirm presence
-        kubectl apply -f testcow.yml
-        kubectl apply -f service.yml
+      run: |
+      ls -R  # List files in k8s directory to confirm presence
+      if [ -f testcow.yml ]; then
+      kubectl apply -f testcow.yml
+      else
+      echo "testcow.yml file not found"
+      exit 1
+    fi
+    kubectl apply -f service.yml
