@@ -40,9 +40,11 @@ jobs:
 
     - name: List contents of the working directory (before cd)
       run: ls -R
+           ll -lrth
 
     - name: Deploy to Kubernetes
       run: | 
            
-           kubectl apply -f testcow.yml
-           kubectl apply -f service.yml
+           kubectl apply -f  /project/k8s/testcow.yml
+           kubectl apply -f  /project/k8s/service.yml
+
