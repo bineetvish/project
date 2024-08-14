@@ -26,7 +26,7 @@ jobs:
       run: |
         docker build -t bineetvish/wisecow-app:latest .
         docker push bineetvish/wisecow-app:latest
-      working-directory: /home/bineet/project
+      
 
   deploy:
     runs-on: ubuntu-latest
@@ -43,6 +43,6 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: | 
-           cd /home/bineet/project/k8s
+           
            kubectl apply -f testcow.yml
            kubectl apply -f service.yml
