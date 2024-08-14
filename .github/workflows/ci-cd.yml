@@ -38,11 +38,13 @@ jobs:
         sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
         minikube start
 
-    - name: List contents of /project/k8s
-      run: ls -la /project/k8s
+    - name: Install kubectl
+      uses: azure/setup-kubectl@v1
+      with:
+        version: 'v1.21.0'
     - name: Deploy to Kubernetes
       run: | 
           
-           kubectl apply -f  /project/k8s/testcow.yml
-           kubectl apply -f  /project/k8s/service.yml
+           kubectl apply -f  testcow.yml
+           kubectl apply -f  service.yml
 
