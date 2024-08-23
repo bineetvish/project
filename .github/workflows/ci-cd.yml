@@ -54,7 +54,7 @@ jobs:
            kubectl get deployment
            minikube status
            kubectl get pods
-           apt-get install -y curl
+           sudo apt-get install -y curl
            kubectl port-forward service/testcowproject 4499:4499
            curl http://localhost:4499
 
