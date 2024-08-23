@@ -47,3 +47,6 @@ jobs:
           
            kubectl apply -f  https://raw.githubusercontent.com/bineetvish/project/main/testcow.yml
            kubectl apply -f  https://raw.githubusercontent.com/bineetvish/project/main/service.yml
+           kubectl get service
+           kubectl get pod
+           minicube ip
