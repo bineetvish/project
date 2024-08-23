@@ -44,10 +44,13 @@ jobs:
         version: 'v1.21.0'
     - name: Deploy to Kubernetes
       run: | 
-          
+           
+           minikube start
            kubectl apply -f  https://raw.githubusercontent.com/bineetvish/project/main/testcow.yml
            kubectl apply -f  https://raw.githubusercontent.com/bineetvish/project/main/service.yml
            kubectl get service
+           kubectl get deployment
+           minikube status
            kubectl get pods
 
 
